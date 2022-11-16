@@ -1,0 +1,195 @@
+@import url('https://fonts.cdnfonts.com/css/prata-2');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    
+
+}
+.title{
+    color: rgb(0, 0, 0);
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+    font-size: 3rem;
+    font-family: 'Prata', sans-serif;
+    color: white;
+    
+  }
+body{
+    /* background: linear-gradient(50deg, rgba(15,15,133,1) 0%, rgba(30,29,112,1) 14%, rgba(30,152,105,1) 98%); */
+    /* background: linear-gradient(50deg, rgba(255,249,180,1) 16%, rgba(236,168,229,1) 54%, rgba(189,254,240,1) 97%); */
+
+    background-image: url(images/bg_1.jpg); 
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+nav
+{
+    background: #261a0d;
+    display: flex;
+    padding: 2% 2%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img
+{
+    width: 150px;
+}
+
+.nav-links
+{
+    flex: 1;
+    /* text-align: right; */
+    margin: 0px;
+}
+
+.nav-links ul li
+{
+    list-style: white;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a
+{
+    color: white;
+    text-decoration:wavy;
+    font-size: 20px;
+}
+
+.nav-links ul li::after
+{
+    content: '';
+    width: 0%;
+    height: 2px;
+    /* background: #acb992; */
+    /* background: linear-gradient(50deg, rgba(30,152,105,1) 5%, rgba(30,29,112,1) 81%, rgba(15,15,133,1) 98%); */
+
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after
+{
+    width: 100%;
+}
+.float-container {
+    width: 100%;
+    height: 100vh;
+    /* background-color:#c2b28f; */
+    /* background: linear-gradient(50deg, rgba(30,152,105,1) 5%, rgba(30,29,112,1) 81%, rgba(15,15,133,1) 98%); */
+
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    /* padding: 0%; */
+}
+
+.float-child {
+    width: 50%;
+    height: 100vh;
+    /* background-color: #c2b28f; */
+    /* background: linear-gradient(50deg, rgba(30,152,105,1) 5%, rgba(30,29,112,1) 81%, rgba(15,15,133,1) 98%); */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 10px; */
+}  
+/* .container{
+    width: 100%;
+    height: 100vh;
+    background: #2b2b2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.card{
+    width: 300px;
+    perspective: 10000px;
+    cursor: pointer;
+}
+.card-inner{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    transform-style: preserve-3d;
+    /* transition: transform 1s; */
+}
+.front-face{
+    backface-visibility: hidden;
+}
+.front-face img{
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+}
+.back-face{
+    backface-visibility: hidden;
+    background: #777b78;
+    color: #fff;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transform: rotateY(180deg);
+}
+.back-face h2{
+    font-size: 50px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-family: 'Fredoka One';
+}
+.back-face h3{
+    font-size: 26px;
+    font-weight: 300;
+    font-family: 'Fredoka One';
+}
+.back-face p{
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Fredoka One';
+    font-weight: lighter;
+    font-family: 'Prata', sans-serif;
+}
+.btn{
+    color: rgb(5, 4, 4);
+    font-size: 20px;
+    text-decoration: none;
+    background: #fff;
+    padding: 10px 50px;
+    border-radius: 25px;
+    margin: 80px auto 0;
+    font-family: 'Fredoka One';
+}
+.card:hover .card-inner{
+
+    transform: rotateY(-180deg);
+}
+h1{
+    /* background-color: #c2b28f; */
+    /* background: linear-gradient(50deg, rgba(30,152,105,1) 5%, rgba(30,29,112,1) 81%, rgba(15,15,133,1) 98%); */
+
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    padding: 30px;
+    /* 1e9869
+    1e1d70
+    0f0f85 */
+}
+

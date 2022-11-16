@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="charts.css" />
+
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script src="./../static/app2.js"></script>
+
+    <!-- <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script> -->
+    <!-- <script type="module" src="./index.js"></script> -->
+    <!-- <script>
+      // alert("hell");
+      // import { add } from "./index.js";
+      // console.log(add(2, 3));
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        console.log("inside draw chart");
+
+        // console.log(get_val());
+        var data = google.visualization.arrayToDataTable([
+          ["Year", "Expenses"],
+          ["2004", 400],
+          ["2005", 460],
+          ["2006", 1120],
+          ["2009", 540],
+        ]);
+
+        var options = {
+          title: "BMI ",
+          curveType: "function",
+          legend: { position: "bottom" },
+        };
+
+        var chart = new google.visualization.LineChart(
+          document.getElementById("curve_chart")
+        );
+
+        chart.draw(data, options);
+      }
+    </script> -->
+  </head>
+  <body>
+    <!-- <h1>Ola</h1> -->
+    <div class="heading">BMI Monitoring</div>
+    <div class="chart_class" id="curve_chart"></div>
+  </body>
+</html>
+<!--  style="width: 900px; height: 500px" -->

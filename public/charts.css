@@ -1,0 +1,31 @@
+@import url('https://fonts.cdnfonts.com/css/prata-2');
+*{
+    padding: 0;
+    margin: 0;
+  }
+  body{
+    /* background-color: rgb(4, 5, 4); */
+    background: linear-gradient(50deg, rgb(9, 41, 29) 5%, rgb(13, 13, 43) 81%, rgb(14, 14, 32)8%);
+  
+    color: white;
+
+  }
+  .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+    font-family: "Prata", sans-serif;
+    font-size: 2rem;
+    
+  }
+  .chart_class{
+    display: flex;
+    align-items: center;
+    height: 70vh;
+    width: 70vw;
+    align-content: center;
+    padding-left: 13rem;
+    padding-top: 2rem;
+  }
+  

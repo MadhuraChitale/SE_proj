@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" type="text/css" href="medicine_css.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Medicines</div>
+      <div class="content">
+        <form name="calendar_data" method="post" action="/medicine">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Date</span>
+              <input name="day" type="text" placeholder="Enter date" required />
+            </div>
+            <div class="input-box">
+              <span class="details">Month</span>
+              <input
+                name="month"
+                type="text"
+                placeholder="Enter Month"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Year</span>
+              <input
+                name="year"
+                type="number"
+                placeholder="Enter year"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Add timings </span>
+              <input
+                name="timings"
+                type="text"
+                placeholder="Timings seperated by comma"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details"
+                >Total number of days (from start date)</span
+              >
+              <input
+                name="no_of_days"
+                type="number"
+                placeholder="Enter number of days"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Tablets/Strip</span>
+              <input
+                name="tablets_per_strip"
+                type="number"
+                placeholder="Number of tablers per strip"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Tablets/dose</span>
+              <input
+                name="tab_per_dose"
+                type="number"
+                placeholder="Number of tablets per dose"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Description</span>
+              <input
+                name="description"
+                type="text"
+                placeholder="Enter your description"
+                required
+              />
+            </div>
+          </div>
+          <div class="summary-details">
+            <!-- <span class="gender-title">Summary</span> -->
+            <!-- <input type="radio" name="summary" value="Drink Water" id="dot-1" />
+            <input type="radio" name="summary" value="Exercise" id="dot-2" />
+            <input
+              type="radio"
+              name="summary"
+              value="Take medicines"
+              id="dot-3"
+            /> -->
+
+            <!-- <div class="category">
+              <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Drink Water</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">Exercise</span>
+              </label>
+              <label for="dot-3">
+                <span class="dot three"></span>
+                <span class="gender">Take Medicines</span>
+              </label>
+            </div> -->
+          </div>
+          <div class="button">
+            <input type="submit" value="Set Reminder" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

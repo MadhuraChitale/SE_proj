@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+  <link rel="stylesheet" href="bmi.css">
+    
+</head>
+<body>
+    <div id="wrapper">
+        <!-- <form id="form" method="POST" action="/bmi">
+            Height (m):  <input name="h" id="inputHeight" type="number" min="1.43" max="2" step="any" required><br>
+            Weight (kg): <input name="w" id="inputWeight" type="number" min="36" max="124" step="any" required><br>
+            <button id="btn" type="submit" ><a href="#graphic-container">Calculate BMI</a></button>
+            <button id="btn" type="submit">Calculate BMI</button>
+           -->
+       
+        <!-- <div id="output-container">Your result will appear here</div> -->
+        <form id="form">
+          <div class="title">Calculate Your BMI</div>
+          <div class="content">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Height (m)</span>
+                <input name="height" type="number" placeholder="Enter height" id="inputHeight" min="1.43" max="2" step="any" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Weight (kg)</span>
+                <input name="weight" type="number" placeholder="Enter weight" id="inputWeight" min="36" max="124" step="any" required>
+              </div>
+            </div>
+          </div>
+          <div class="button">
+            <input type="submit" href="#chart" value="Calculate BMI">
+          </div>
+            <!-- Height (m):  <input name="height" id="inputHeight" type="number" min="1.43" max="2" step="any"><br>
+            Weight (kg): <input name=" weight" id="inputWeight" type="number" min="36" max="124" step="any"><br>
+            <a href="#graphic-container"><button id="btn">Calculate BMI</button></a> -->
+        </form>
+    </div>
+    <div id="output-container">Your result will appear here</div>
+    <div id="graphic-container">
+        <img name="chart" id="chart" src="https://upload.wikimedia.org/wikipedia/commons/c/cc/BMI_chart.png" alt="BMI chart" width = "800px">
+        <span name="x" id="x">&#10060</span>
+
+    </div>
+    <!-- <div class="button">
+      <button type="submit" value="Display Chart"></button>
+    </div> -->
+  <!-- </form> -->
+</div>
+<div class="col">
+  <table class="table">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">Category</th>
+        <th scope="col">BMI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="underweight">
+        <th scope="row">Underweight</th>
+        <td> &lt 18 </td>
+      </tr>
+      <tr class="healthy">
+        <th scope="row">Healthy</th>
+        <td> 19 - 25</td>
+      </tr>
+      <tr class="overweight">
+        <th scope="row">Overweight</th>
+        <td> 25 - 30</td>
+      </tr>
+      <tr class="obese">
+        <th scope="row">Obese</th>
+        <td> 30 - 40</td>
+      </tr>
+      <tr class="extremely-obese">
+        <th scope="row">Extremely Obese</th>
+        <td> &gt 40 </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  
+    
+    
+    <script>
+        const inputHeight = document.getElementById("inputHeight");
+const inputWeight = document.getElementById("inputWeight");
+const form = document.getElementById("form");
+
+//app.post "that page":
+//get height weight
+//call fun runCalculation
+
+//in runCalculation:
+//
+form.addEventListener("submit", runCalculation);
+
+
+function runCalculation(e) {
+  console.log("run calculations.");
+  e.preventDefault();
+  let result;
+  result = inputWeight.value / (inputHeight.value * inputHeight.value);
+
+  const output = `
+    <span>Your height is:<br><b>${
+      document.getElementById("inputHeight").value
+    } metres</b></span><br>
+    <span>Your weight is:<br><b>${
+      document.getElementById("inputWeight").value
+    }kg</b></span><br>
+    <span>Your BMI is:<br><b>${result.toFixed(1)}</b></span><br>
+    `;
+
+  const outputContainer = document.getElementById("output-container");
+  console.log('"outputContainer"');
+  console.log(outputContainer);
+  outputContainer.innerHTML = output;
+  height=inputHeight.value;
+  weight=inputWeight.value;
+  const data={height,weight};
+  const options={
+    method: 'POST',
+    headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify(data)
+  };
+  fetch('/bmi',options);
+
+
+
+  // form.addEventListener("submit", displayResult);
+  
+}
+
+form.addEventListener("submit", displayResult);
+
+function displayResult(e) {
+  e.preventDefault();
+  // get chart
+  var chart = document.getElementById("chart");
+
+  //yaxis
+  //here height and weight are in m
+  let ysum =
+    ((document.getElementById("inputHeight").value - 1.43) / 0.57) * 374;
+  ysum = Math.abs(ysum - 374);
+  yMark = ysum + chart.offsetTop + 37;
+  yMark = yMark - 11;
+
+  // xaxis
+  let xsum = ((document.getElementById("inputWeight").value - 36) / 88) * 734;
+  xMark = xsum + chart.offsetLeft + 32;
+  xMark = xMark - 11;
+
+  //get icon
+  x = document.getElementById("x");
+
+  //position and style icon
+  x.style.position = "absolute";
+  x.style.top = yMark + "px";
+  x.style.left = xMark + "px";
+  x.style.fontSize = "20px";
+  x.style.fontWeight = "bold";
+  x.style.display = "inline-block";
+}
+
+
+    </script>
+</body>
+</html>

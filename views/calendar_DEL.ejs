@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" type="text/css" href="calendar_css.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Delete Your Reminder</div>
+    <div class="content">
+      <form name="calendar_data" method="post" action="/calendar_DEL">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Date</span>
+            <input name="day" type="text" placeholder="Enter date" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Month</span>
+            <input name="month" type="text" placeholder="Enter month" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Year</span>
+            <input name="year" type="text" placeholder="Enter year" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Time</span>
+            <input name="time" type="text" placeholder="Enter Time in format HH:MM:SS" required>
+          </div>
+
+        </div>
+        <div class="button">
+          <input type="submit" value="Delete Reminder">
+        </div>
+        <div class="message-box">
+            <p class="message">
+                <%= flag %>
+            </p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
